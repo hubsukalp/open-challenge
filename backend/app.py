@@ -52,11 +52,11 @@ app.config.from_object(Config)
 CORS(app)
 jwt = JWTManager(app)
 
-app.register_blueprint(auth_bp)
-app.register_blueprint(apis_bp)
-app.register_blueprint(api_keys_bp)
-app.register_blueprint(logs_bp)
-app.register_blueprint(execute_bp)
+# app.register_blueprint(auth_bp)
+# app.register_blueprint(apis_bp)
+# app.register_blueprint(api_keys_bp)
+# app.register_blueprint(logs_bp)
+# app.register_blueprint(execute_bp)
 
 # @app.before_request
 # def initialize_db():
