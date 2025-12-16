@@ -44,7 +44,8 @@ swagger_template = {
     ]
 }
 
-swagger = Swagger(app, config=swagger_config)
+swagger = Swagger(app, config=swagger_config, template=swagger_template)
+
 
 app.config.from_object(Config)
 
@@ -77,7 +78,21 @@ def index():
 
 @app.route('/health')
 def health():
+    """
+    Health Check API
+    ---
+    tags:
+      - Health
+    responses:
+      200:
+        description: Service is healthy
+        content:
+          application/json:
+            example:
+              status: healthy
+    """
     return jsonify({'status': 'healthy'}), 200
+
 
 @app.errorhandler(404)
 def not_found(error):
