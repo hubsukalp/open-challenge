@@ -13,6 +13,16 @@ from routes.logs import logs_bp
 from routes.execute import execute_bp
 
 app = Flask(__name__)
+swagger_config = {
+    "openapi": "3.0.2",
+    "title": "Open Challenge API",
+    "version": "1.0.0",
+    "description": "Interactive API documentation for Open Challenge backend",
+    "specs_route": "/api/docs"
+}
+
+swagger = Swagger(app, config=swagger_config)
+
 app.config.from_object(Config)
 
 CORS(app)
