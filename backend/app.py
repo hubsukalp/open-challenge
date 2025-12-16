@@ -21,6 +21,29 @@ swagger_config = {
     "specs_route": "/api/docs"
 }
 
+swagger_template = {
+    "openapi": "3.0.2",
+    "info": {
+        "title": "Open Challenge API",
+        "description": "Interactive API documentation for Open Challenge backend",
+        "version": "1.0.0"
+    },
+    "components": {
+        "securitySchemes": {
+            "BearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    },
+    "security": [
+        {
+            "BearerAuth": []
+        }
+    ]
+}
+
 swagger = Swagger(app, config=swagger_config)
 
 app.config.from_object(Config)
