@@ -58,9 +58,9 @@ app.register_blueprint(api_keys_bp)
 app.register_blueprint(logs_bp)
 app.register_blueprint(execute_bp)
 
-@app.before_request
-def initialize_db():
-    init_indexes()
+# @app.before_request
+# def initialize_db():
+ #   init_indexes()
 
 @app.route('/')
 def index():
