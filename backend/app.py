@@ -3,6 +3,8 @@ from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from config import Config
 from database import init_indexes
+from flasgger import Swagger
+
 
 from routes.auth import auth_bp
 from routes.apis import apis_bp
